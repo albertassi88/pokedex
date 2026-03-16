@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Pokedex</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <img src="assets/logo.png" class="logo">
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Pokédex</a>
+        </nav>
+    </header>
+
+    <section class="search-area">
+        <div class="search-box">
+            <input type="text" id="search" placeholder="Faça uma busca pelo nome do pokémon" />
+            <span class="icon">🔍</span>
+        </div>
+    </section>
+
+    <main>
+        <div id="pokemon-list" class="pokemon-grid"></div>
+        <div class="pagination">
+            <button id="prev">← Anterior</button>
+            <div class="pages">
+                <span class="active">1</span>
+                <span>2</span>
+                <span>3</span>
+            </div>
+            <button id="next">Próximo →</button>
+        </div>
+    </main>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

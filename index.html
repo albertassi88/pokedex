@@ -3,14 +3,15 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokedex</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-
     <header class="header">
-        <img src="assets/logo.png" class="logo">
+        <img src="assets/logo.png" class="logo" alt="Logo Pokedex">
+
         <nav>
             <a href="#">Home</a>
             <a href="#">Pokédex</a>
@@ -26,17 +27,21 @@
 
     <main>
         <div id="pokemon-list" class="pokemon-grid"></div>
+
         <div class="pagination">
             <button id="prev">← Anterior</button>
+
             <div class="pages">
                 <span class="active">1</span>
                 <span>2</span>
                 <span>3</span>
             </div>
+
             <button id="next">Próximo →</button>
         </div>
     </main>
 
-    <script src="js/main.js"></script>
+    <script type="module" src="js/main.js"></script>
+
 </body>
 </html>

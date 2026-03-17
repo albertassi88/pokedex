@@ -1,5 +1,8 @@
-import { getPokemons, getPokemonDetails } from "./api.js";
+import { getPokemons, getPokemonDetails, searchPokemon } from "./api.js";
 import { renderPokemon } from "./render.js";
+import { searchInputPokemon } from "./search.js";
+
+const searchInput = document.getElementById("search");
 
 let page = 1;
 const limit = 18;
@@ -21,3 +24,8 @@ async function loadPokemons(){
 }
 
 loadPokemons();
+
+searchInputPokemon(searchInput);
+
+
+

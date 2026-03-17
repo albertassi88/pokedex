@@ -11,3 +11,13 @@ export async function getPokemonDetails(url){
   const data = await response.json();
   return data;
 }
+
+export async function searchPokemon(name){
+  const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${name.toLowerCase()}`);
+  if(!response.ok){
+    return null;
+  }
+  const data = await response.json();
+  return data;
+}
+

@@ -1,20 +1,26 @@
 import { searchPokemon } from "./api.js";
 import { renderPokemon } from "./render.js";
 
-export function searchInputPokemon(input){
+let lastSearch = "";
+
+export function searchInputPokemon(input, loadPokemons){
 
   input.addEventListener("keyup", async (e) => {
 
-    const value = e.target.value.trim();
-
+    const value = e.target.value.trim().toLowerCase();
     const container = document.getElementById("pokemon-list");
 
+    lastSearch = value;
+
     if (value === ""){
-      location.reload();
+      container.innerHTML = ""
+      loadPokemons();
       return;
     }
 
     const pokemon = await searchPokemon(value);
+
+    if (lastSearch !== value) return;
 
     container.innerHTML = "";
 

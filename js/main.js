@@ -1,15 +1,25 @@
-import { getPokemons, getPokemonDetails, searchPokemon } from "./api.js";
+import { getPokemons, getPokemonDetails } from "./api.js";
 import { renderPokemon } from "./render.js";
 import { searchInputPokemon } from "./search.js";
+import { setupPagination } from "./pagination.js";
 
 const searchInput = document.getElementById("search");
 
-let page = 1;
+const page = { value: 1 };
 const limit = 18;
+const { renderPagination } = setupPagination({
+  page,
+  setPage,
+  loadPokemons,
+  limit
+});
+
 
 async function loadPokemons(){
 
-  const offset = (page - 1) * limit;
+  renderPagination();
+
+  const offset = (page.value - 1) * limit;
 
   const pokemons = await getPokemons(limit, offset);
 
@@ -23,9 +33,14 @@ async function loadPokemons(){
 
 }
 
+function setPage(newPage) {
+  page.value = newPage;
+}
+
 loadPokemons();
 
-searchInputPokemon(searchInput);
+searchInputPokemon(searchInput, loadPokemons);
+
 
 
 

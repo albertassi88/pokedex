@@ -14,15 +14,12 @@ const { renderPagination } = setupPagination({
   limit
 });
 
-
 async function loadPokemons(){
 
   renderPagination();
 
   const offset = (page.value - 1) * limit;
-
   const pokemons = await getPokemons(limit, offset);
-
   const container = document.getElementById("pokemon-list");
   container.innerHTML = "";
 
@@ -30,7 +27,6 @@ async function loadPokemons(){
     const details = await getPokemonDetails(pokemon.url);
     renderPokemon(details);
   }
-
 }
 
 function setPage(newPage) {
@@ -38,7 +34,6 @@ function setPage(newPage) {
 }
 
 loadPokemons();
-
 searchInputPokemon(searchInput, loadPokemons);
 
 

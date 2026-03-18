@@ -9,7 +9,6 @@ export function searchInputPokemon(input, loadPokemons){
 
     const value = e.target.value.trim().toLowerCase();
     const container = document.getElementById("pokemon-list");
-
     lastSearch = value;
 
     if (value === ""){
@@ -24,12 +23,11 @@ export function searchInputPokemon(input, loadPokemons){
 
     container.innerHTML = "";
 
-    if (pokemon){
+    if (pokemon) {
       renderPokemon(pokemon);
     } else {
       container.innerHTML = "<p>Pokémon não encontrado</p>";
     }
-
   });
 
 }

@@ -7,10 +7,12 @@ export function renderPokemon(pokemon){
   card.classList.add("pokemon-card");
 
   card.innerHTML = `
-    <div class="type">${pokemon.types[0].type.name}</div>
-    <div class="number">#${pokemon.id}</div>
-    <img src="${pokemon.sprites.other['official-artwork'].front_default}" />
-    <h3>${pokemon.name}</h3>
+    <div class="box-img">
+      <div class="type">${pokemon.types[0].type.name}</div>
+      <div class="number-card">#${pokemon.id}</div>
+      <img src="${pokemon.sprites.other['official-artwork'].front_default}" />
+      <h3>${pokemon.name}</h3>    
+    </div>
   `;
 
   container.appendChild(card);
